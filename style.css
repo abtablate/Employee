@@ -1,0 +1,229 @@
+/* Modern Black-Grey-White Theme Stylesheet */
+:root {
+  --primary: #2b2b2b; /* Dark Grey (almost black) */
+  --primary-light: #d9d9d9; /* Light Grey */
+  --primary-dark: #111111; /* True Black */
+  --accent: #555555; /* Medium Grey */
+  --text: #1c1c1c; /* Darker text */
+  --text-light: #666666; /* Lighter text */
+  --background: #f0f0f0; /* Very Light Grey */
+  --card-bg: #ffffff; /* White for cards */
+  --border: #cccccc; /* Light border */
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1, h2, h3 {
+  color: var(--primary-dark);
+  margin-top: 0;
+}
+
+header h1 {
+  color: white;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  margin: 20px 0;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--primary-dark);
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background-color: var(--primary-light);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: var(--primary-light);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  background-color: var(--accent);
+}
+
+.btn-danger:hover {
+  background-color: var(--primary-dark);
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--primary-dark);
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primary-dark);
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.action-links a {
+  margin-right: 10px;
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.action-links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* For empty table messages */
+.empty-message {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-light);
+}
